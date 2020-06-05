@@ -26,4 +26,6 @@ function calcNumVal(){
     }
     var op="Total num value is"+ nameVal;
     document.getElementById('op').innerText=op;
+    //innertext is used when we are writing  a value to html
 }
+//html is displaying js is functionality
