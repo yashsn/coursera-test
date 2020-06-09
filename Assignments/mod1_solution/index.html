@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app='LunchCheck'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+    <title>Game</title>
+  </head>
+  <body>
+    <h1>How much is too much?</h1>
+    <div ng-controller='LunchCheckController'>
+      
+      <div>
+        <input type="text" ng-model="string"> <!-- 1,,2 considers 2 elements  --> 
+        <button ng-click="checking()">Check</button>
+        <br>
+
+        Game has a message for you: <br>
+        <p style="color:{{col}}">{{myAns}}</p>
+      
+      </div>
+    </div>
+  </body>
+</html>
