@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingListCheckOff'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+    <title>Game</title>
+  </head>
+  <body>
+    <h1>Buy items</h1>
+    <div ng-controller='ToBuyController as itembuy'  >
+        Shop for these items:
+        <ol>
+            <li ng-repeat="item in itembuy.listtb">
+              {{ item.qty }} units of {{ item.name }}
+              <button ng-click="itembuy.remove($index);">Buy Item</button>
+            </li>
+          </ol>
+          
+          <div ng-show="itembuy.size1==0" >All done</div>
+          
+          <div ng-show="itembuy.size2==0" >Shopping left!</div>
+          
+    </div>
+    
+    <div ng-controller='AlreadyBoughtController as itembought'>
+    Items you have bought:
+        <ol>
+            <li ng-repeat="item in itembought.listtbo">
+              {{ item.qty }} units of {{ item.name }}
+             {{itembought.view()}}
+            </li>
+          </ol>
+          
+          <div ng-show="itembought.size2==0" >Shopping left!</div>
+          <!-- {{itembought.size2}}
+          <div ng-if="itembought.errorMessage" class="error">Error: {{itembought.errorMessage}}</div> -->
+    </div>
+    
+  </body>
+</html>
